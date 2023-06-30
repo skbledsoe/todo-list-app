@@ -1,0 +1,15 @@
+<% content_for :nav_link do %>
+  <a href="/lists/new" class="add">New List</a>
+<% end %>
+
+<ul id="lists">
+  <% sort_lists(@lists).each do |list| %>
+    <li class="<%= list_class(list) %>">
+      <a href="/lists/<%= list[:id] %>">
+        <h2><%= list[:name] %></h2>
+        <p><%= todos_remaining(list[:todos]) %>/<%= todos_total(list[:todos]) %></p>
+      </a> 
+    </li>
+  <% end %>
+</ul>
+
