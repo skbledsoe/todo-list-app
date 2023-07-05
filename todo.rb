@@ -4,6 +4,7 @@ require "sinatra/reloader" if development?
 require "tilt/erubis"
 
 configure do
+  set :erb, :escape_html => true
   enable :sessions
   set :session_secret, "79deb0c636d0adf62237c14c2747fb1a8029ab99ed4e9a5555468448b588578f"
 end
